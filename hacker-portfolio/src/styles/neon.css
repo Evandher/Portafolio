@@ -1,0 +1,70 @@
+.glitch {
+  position: relative;
+  display: inline-block;
+  color: #00ffff; /* texto principal: cyan */
+  font-family: 'Fira Code', monospace;
+  font-size: 2rem;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+  animation: flicker 1.5s infinite alternate;
+  overflow: hidden;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+}
+
+.glitch::before {
+  color: #ff00ff; /* magenta */
+  top: -1px;
+  left: 1px;
+  animation: glitchTop 2s infinite linear;
+  opacity: 0.6;
+}
+
+.glitch::after {
+  color: #00aaff; /* azul eléctrico */
+  top: 1px;
+  left: -1px;
+  animation: glitchBottom 2s infinite linear;
+  opacity: 0.6;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  25% { opacity: 0.95; }
+  50% { opacity: 0.9; }
+  75% { opacity: 0.97; }
+}
+
+@keyframes glitchTop {
+  0% { clip-path: inset(0 0 90% 0); transform: translate(0); }
+  25% { clip-path: inset(15% 0 75% 0); transform: translate(-1px, -2px); }
+  50% { clip-path: inset(25% 0 60% 0); transform: translate(1px, 1px); }
+  100% { clip-path: inset(0 0 90% 0); transform: translate(0); }
+}
+
+@keyframes glitchBottom {
+  0% { clip-path: inset(90% 0 0 0); transform: translate(0); }
+  25% { clip-path: inset(75% 0 10% 0); transform: translate(2px, 1px); }
+  50% { clip-path: inset(60% 0 30% 0); transform: translate(-1px, 1px); }
+  100% { clip-path: inset(90% 0 0 0); transform: translate(0); }
+}
+
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+.shake {
+  animation: shake 0.3s ease-in-out;
+}
+
