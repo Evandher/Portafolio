@@ -1,40 +1,53 @@
+import Button from "../ui/Button";
+
 const Hero = () => {
   return (
-    <section id="home" className="flex min-h-[90vh] items-center">
-      <div className="w-full">
-        
-        {/* Texto principal */}
-        <p className="mb-4 text-sm uppercase tracking-widest text-slate-400">
+    <section id="home" className="relative flex min-h-[90vh] items-center">
+      <div className="w-full max-w-3xl">
+
+        {/* Glow decorativo */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute left-1/4 top-10 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl" />
+          <div className="absolute right-1/4 top-24 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
+        </div>
+
+        {/* Rol */}
+        <p
+          className="mb-4 text-sm uppercase tracking-widest"
+          style={{ color: "var(--muted)" }}
+        >
           Desarrollador de Software
         </p>
 
-        <h1 className="mb-6 text-4xl font-bold leading-tight text-white md:text-6xl">
-          Hola, soy <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Evandher</span>
+        {/* Nombre */}
+        <h1
+          className="mb-6 text-4xl font-bold leading-tight md:text-6xl"
+          style={{ color: "var(--heading)" }}
+        >
+          Hola, soy{" "}
+          <span className="bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            Evandher Abad
+          </span>
         </h1>
 
-        <p className="mb-8 max-w-2xl text-lg text-slate-400">
-          Desarrollador Full Stack con experiencia en aplicaciones empresariales, 
-          arquitectura backend y despliegue en la nube. Me especializo en crear 
+        {/* Descripción */}
+        <p
+          className="mb-8 max-w-2xl text-lg leading-relaxed md:text-xl"
+          style={{ color: "var(--muted)" }}
+        >
+          Desarrollador Full Stack con experiencia en aplicaciones empresariales,
+          arquitectura backend y despliegue en la nube. Me especializo en crear
           soluciones modernas, eficientes y escalables.
         </p>
 
         {/* Botones */}
         <div className="flex flex-wrap gap-4">
-          <a
-            href="#projects"
-            className="rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3 font-medium text-white transition hover:opacity-90"
-          >
-            Ver proyectos
-          </a>
+          <Button href="#projects">Ver proyectos</Button>
 
-          <a
-            href="#contact"
-            className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 font-medium text-white backdrop-blur-md transition hover:bg-white/10"
-          >
+          <Button href="#contact" variant="secondary">
             Contactarme
-          </a>
+          </Button>
         </div>
-
       </div>
     </section>
   );

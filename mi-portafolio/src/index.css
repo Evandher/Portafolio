@@ -4,11 +4,37 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --bg: #020617;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+
+  --card: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --nav: rgba(15, 23, 42, 0.6);
+
+  --heading: #ffffff;
+  --button-secondary-text: #ffffff;
+}
+
+html[data-theme="light"] {
+  --bg: #dfe6ee;
+  --text: #1e293b;
+  --muted: #5b6b7f;
+
+  --card: rgba(255, 255, 255, 0.32);
+  --card-border: rgba(15, 23, 42, 0.08);
+  --nav: rgba(255, 255, 255, 0.28);
+
+  --heading: #0f172a;
+  --button-secondary-text: #0f172a;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #0b1120;
-  color: white;
+  background: var(--bg);
+  color: var(--text);
   font-family: Inter, system-ui, sans-serif;
 }
